@@ -1,0 +1,121 @@
+
+public class Ej9 {
+
+	/* Dada una matriz de m × n de caracteres con filas que tienen
+secuencias de caracteres separadas por uno o más espacios ‘ ’,
+realizar un programa que reemplace todas las ocurrencias de una
+secuencia patrón dada en un arreglo P, por la secuencia contenida
+en el arreglo R (Las secuencias en P y R pueden tener distinto
+tamaño). */
+
+	public static final int M = 4;
+	public static final int N = 23;
+
+	public static void main(String[] args) {
+
+		char [] [] trabalenguas = {
+				{' ','c','o','m','p','r','e',' ',' ','p','o','c','a','s',' ',' ','c','o','p','a','s',' ',' ',},
+				{' ','p','o','c','a','s',' ',' ','c','o','p','a','s',' ',' ','c','o','m','p','r','e',' ',' ',},
+				{'c','o','m','o',' ','c','o','m','p','r','e',' ','p','o','c','a','s',' ','c','o','p','a','s',},
+				{' ','p','o','c','a','s',' ',' ','c','o','p','a','s',' ',' ','p','a','g','u','e',' ',' ',' ',}
+		};
+
+		char [] P = {'p','o','c','a','s'};
+		char [] R = {'d','o','s'};
+
+
+		imprimir_matriz(trabalenguas, M, N); // Ver estado original de la matriz
+
+		for (int fila = 0; fila<M;fila++) {
+			reemplazar_segun_patron(trabalenguas[fila],P,R);
+		}
+
+		System.out.println("\n");
+		imprimir_matriz(trabalenguas, M, N); // Ver estado modificado de la matriz
+
+	}
+
+	private static void reemplazar_segun_patron(char[] fila, char [] patron, char [] reemplazo) {
+
+		int inicio = 0;
+		int fin = -1;
+		int tamanio = 0;
+		boolean hayPatron = false;
+
+
+		while (inicio<N) {
+			inicio = buscarInicio(fila, fin+1);
+			if (inicio<N) {
+				fin = buscarFin(fila, inicio);
+				tamanio = (fin-inicio)+1;
+				
+				hayPatron = comprobarContenido(fila,inicio,tamanio,patron);
+				if (hayPatron) {
+					reemplazarContenido(fila,inicio,reemplazo);
+				}
+
+			}
+		}
+
+	}
+
+	private static void reemplazarContenido(char[] fila, int inicio, char[] reemplazo) {
+		
+		for (int i = 0; i<reemplazo.length; i++) {
+			System.out.println("Comienza a reemplazar en"+inicio);
+			fila[inicio+i] = reemplazo[i]; 
+		}
+		
+	}
+
+	private static boolean comprobarContenido(char[] fila, int inicio, int tamanio, char[] patron) {
+
+		int contCoincidencia = 0;
+
+		if (tamanio!=patron.length) { 
+			return false;					
+		}
+		else {
+			for (int i = 0; i<patron.length; i++) {
+				if (fila[inicio+i] == patron [i]) {
+					contCoincidencia++;
+				}
+			}
+			if (contCoincidencia == patron.length) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+
+
+	}
+
+	private static void imprimir_matriz (char [] [] mat, int filas, int columnas) {
+
+		for ( int i = 0; i<filas; i++) {
+			for(int j = 0; j<columnas;j++) {
+				System.out.print(" "+mat [i] [j]);
+			}
+			System.out.println("");
+		}
+	}
+
+	private static int buscarFin(char[] nuevaFila, int inicio) {
+
+		int i = inicio;
+		while (i < N && nuevaFila[i] != ' ')
+			i++;
+		return i - 1;
+	}
+
+	private static int buscarInicio(char[] nuevaFila, int desde) {
+
+		int i = desde;
+		while (i < N && nuevaFila[i] == ' ')
+			i++;
+		return i;
+	}
+
+}

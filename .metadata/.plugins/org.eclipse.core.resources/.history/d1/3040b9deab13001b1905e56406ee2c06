@@ -1,0 +1,7 @@
+package tp8.SistemaDeArchivos.busqueda;
+
+public abstract class Busqueda {
+	
+	public abstract boolean cumple (Fichero fichero);
+
+}

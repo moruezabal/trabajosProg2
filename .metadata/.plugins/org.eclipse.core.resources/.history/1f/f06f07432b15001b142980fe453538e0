@@ -1,0 +1,11 @@
+package PortalDeNoticias;
+
+public class BusquedaPorTitulo extends Busqueda {
+
+	@Override
+	public boolean cumple(Noticia noticia) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

@@ -1,0 +1,84 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+
+
+
+public class Ejercicio1 {
+
+	public static void main(String[] args) {
+	}
+
+	public static void PromAltura() {
+		int cant = 0;
+		double altura = 0.0;
+		int person = 0;
+
+		try { 
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("Ingrese la cantidad de personas a medir:");
+			cant = new Integer (entrada.readLine());
+			for (int i=0; i<cant; i++) {
+				person++;
+				System.out.println("Ingrese la altura de la persona "+person);
+				altura+= new Double (entrada.readLine());
+			}
+			System.out.println("La altura promedio de las "+person+" personas es de: "+(altura/cant));	
+
+		} 
+		catch (Exception exc) {
+			System.out.println("Error al ingesar el valor");
+		}
+
+	}
+
+	public static char pedirchar() {
+
+		char letra = 'c';
+		boolean validar = false;
+
+		while (validar == false) {
+			try {
+				BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+				System.out.println("Ingrese una letra:");
+				letra = (char) (entrada.readLine().charAt(0));
+				validar = true;
+
+			} catch (Exception exc) {
+				System.out.println("Error al ingesar el valor,ingresalo nuevamente");
+				
+			}
+			
+		}
+		return letra;
+		
+	}
+
+	public static int pedirentero() {
+		
+		int entero = 0;
+		boolean validar = false;
+		
+		while (validar == false)
+		try { 
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+			System.out.println("Ingrese un número");
+			entero = new Integer (entrada.readLine());
+			validar = true;
+		} 
+		catch (Exception exc) {
+			System.out.println("Error al ingesar el valor, ingréselo nuevamente");
+		}
+		return entero;
+	}
+
+
+	public static void enteromasdiez() {
+		int numero =0;
+		
+		numero = (pedirentero()+10) ;
+		System.out.println("El nuevo numero es = "+numero);
+	}
+	
+
+}

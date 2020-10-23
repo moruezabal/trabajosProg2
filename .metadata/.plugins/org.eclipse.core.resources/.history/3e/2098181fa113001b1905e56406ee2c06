@@ -1,0 +1,63 @@
+package tp8.SistemaDeArchivos;
+
+import java.time.LocalDate;
+
+public abstract class Fichero {
+	
+	public String nombre;
+	public LocalDate fechaCreacion;
+	
+	public Fichero(String nombre, LocalDate fechaCreacion) {
+		this.nombre = nombre;
+		this.fechaCreacion = fechaCreacion;
+	}
+	 
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+
+	public LocalDate getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+
+	public abstract double getPeso();
+	
+	public abstract int cantArchivos();
+	
+	public abstract int cantCarpetas();
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main (String[] args) {
+		
+		Carpeta carpeta1 = new Carpeta("Carpeta1");
+		Archivo cancion = new Archivo("cancion", "mp3", 128);
+		
+		Carpeta comprimidos = new Carpeta("Comprimidos");
+		carpeta1.addArchivo(comprimidos);
+		Archivo poema = new Archivo("poema", "txt", 200);
+		comprimidos.addArchivo(poema);
+		
+		carpeta1.addArchivo(cancion);
+		System.out.println(carpeta1.getPeso());
+		System.out.println(comprimidos.getPeso());
+		System.out.println(carpeta1.cantArchivos());
+		
+	}
+
+}
+
+

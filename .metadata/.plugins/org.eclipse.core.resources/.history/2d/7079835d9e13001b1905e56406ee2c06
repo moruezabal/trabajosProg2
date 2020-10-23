@@ -1,0 +1,25 @@
+package tp8.SistemaDeArchivos;
+
+public class Zip extends Carpeta{
+	
+	public static double factorCompresion = 0.4;
+	
+	public Zip(String nombre) {
+		super(nombre);
+	}
+	
+	@Override
+	public double getPeso(){
+		return super.getPeso()*Zip.factorCompresion;
+		
+	}
+	
+	public int cantArchivos() {
+		return 1;
+	};
+	
+	
+
+	
+
+}

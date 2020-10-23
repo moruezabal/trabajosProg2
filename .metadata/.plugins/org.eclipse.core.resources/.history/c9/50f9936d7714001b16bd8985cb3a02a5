@@ -1,0 +1,7 @@
+package PortalDeNoticias;
+
+public abstract class Contenido {
+	
+	public abstract int cantNoticias();
+
+}

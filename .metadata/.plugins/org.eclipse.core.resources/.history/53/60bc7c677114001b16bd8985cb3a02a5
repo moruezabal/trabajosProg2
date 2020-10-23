@@ -1,0 +1,55 @@
+package PortalDeNoticias;
+
+import java.util.ArrayList;
+
+public class Seccion extends Contenido {
+	
+	private String nombre;
+	private ArrayList<Contenido> contenido;
+	private String descripcion;
+	private String imagenAsociada;
+	
+	
+	public Seccion(String nombre, String descripcion, String imagenAsociada) {
+		this.nombre = nombre;
+		this.contenido = new ArrayList<>();
+		this.descripcion = descripcion;
+		this.imagenAsociada = imagenAsociada;
+	}
+
+	
+	public void addContenido(Contenido contenido) {
+		this.contenido.add(contenido);
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+
+	public String getImagenAsociada() {
+		return imagenAsociada;
+	}
+
+
+	public void setImagenAsociada(String imagenAsociada) {
+		this.imagenAsociada = imagenAsociada;
+	}
+	
+	
+}

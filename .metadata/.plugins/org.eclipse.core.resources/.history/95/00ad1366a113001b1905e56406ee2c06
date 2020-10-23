@@ -1,0 +1,44 @@
+package tp8.SistemaDeArchivos;
+
+import java.time.LocalDate;
+
+public class Atajo extends Fichero {
+
+	private static int PESO_ATAJO = 1;
+	
+	private Fichero apuntado;
+	
+	public Atajo(Fichero apuntado, LocalDate fechaCreacion) {
+		super(apuntado.getNombre(), fechaCreacion));
+		this.apuntado = apuntado;
+	}
+	
+	public Fichero getApuntado() {
+		return this.apuntado;
+	}
+	
+	@Override
+	public String getNombre() {
+		return "Acceso Directo a " + super.getNombre();
+	}
+
+	@Override
+	public double getPeso() {
+		return PESO_ATAJO;
+	}
+
+	@Override
+	public int cantArchivos() {
+		return 1;
+	}
+	
+	public static void setPesoAtajo(int pesoNuevo) {
+		PESO_ATAJO = pesoNuevo;
+	}
+
+	@Override
+	public int cantCarpetas() {
+		return 0;
+	}
+	
+}

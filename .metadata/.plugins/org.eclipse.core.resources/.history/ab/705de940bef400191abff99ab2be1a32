@@ -1,0 +1,39 @@
+
+public class Ej8 {
+	
+	/* Dada una matriz de m × n de caracteres con filas que tienen
+	secuencias de caracteres separadas por uno o más espacios ‘ ’,
+	realizar un programa que invierta el orden de las últimas CANT
+	secuencias de cada fila de la matriz. */
+	
+	public static final int M = 7;
+	public static final int N = 9;
+
+	public static void main(String[] args) {
+		
+	char [] [] lolita = {
+			{'l','o','l','i','t','a',' ','l','u'},
+			{'z',' ','d','e',' ','m','i',' ','v'},
+			{'i','d','a',' ','f','u','e','g','o'},
+			{' ','d','e',' ','m','i','s',' ','e'},
+			{'n','t','t','r','a','ñ','a','s',' '},
+			{'p','e','c','a','d','o',' ','m','í'},
+			{'o',' ','a','l','m','a',' ','m','i'}
+			
+	};
+	
+	imprimir_matriz (lolita,M,N);
+		
+	}
+	
+	private static void imprimir_matriz (char [] [] mat, int filas, int columnas) {
+
+		for ( int i = 0; i<filas; i++) {
+			for(int j = 0; j<columnas;j++) {
+				System.out.print(" "+mat [i] [j]);
+			}
+			System.out.println("");
+		}
+	}
+
+}

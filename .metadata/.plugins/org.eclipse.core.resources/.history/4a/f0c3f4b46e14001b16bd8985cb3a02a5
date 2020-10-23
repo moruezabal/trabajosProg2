@@ -1,0 +1,11 @@
+package PortalDeNoticias;
+
+import java.util.ArrayList;
+
+public class Seccion extends Contenido {
+	
+	private String nombre;
+	private ArrayList<Contenido> contenido;
+	private String descripcion;
+	private String imagenAsociada;
+}

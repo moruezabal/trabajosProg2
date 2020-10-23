@@ -1,0 +1,60 @@
+package tp8.SistemaDeArchivos;
+
+import java.time.LocalDate;
+
+public class Archivo extends Fichero{
+	
+	private String extension;
+	private int peso;
+	public LocalDate fechaModificacion;
+	
+	
+	public Archivo(String nombre, String extension, int peso, LocalDate fechaCreacion) {
+		super(nombre, fechaCreacion);
+		this.extension = extension;
+		this.peso = peso;
+		this.fechaModificacion = fechaCreacion;
+		
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	public String getExtension() {
+		return this.extension;
+	}
+	
+	
+	public void setExtension(String extension) {
+		this.extension = extension;
+	}
+
+	@Override
+	public double getPeso() {
+		return this.peso;
+	}
+	
+	public void setPeso(int peso) {
+		this.peso = peso;
+	}
+	
+	
+
+	@Override
+	public int cantArchivos() {
+		return 1;
+	}
+
+
+	@Override
+	public int cantCarpetas() {
+		return 0;
+	}
+	
+	
+	
+	
+	
+	
+	
+
+}

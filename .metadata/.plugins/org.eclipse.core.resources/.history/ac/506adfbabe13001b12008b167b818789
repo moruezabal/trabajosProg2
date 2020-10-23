@@ -1,0 +1,13 @@
+package tp8.SistemaDeArchivos.busqueda;
+
+import tp8.SistemaDeArchivos.Fichero;
+
+public class BusquedaFechaModificacion extends Busqueda {
+
+	@Override
+	public boolean cumple(Fichero fichero) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

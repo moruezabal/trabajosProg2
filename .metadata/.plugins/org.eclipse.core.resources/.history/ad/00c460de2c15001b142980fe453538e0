@@ -1,0 +1,15 @@
+package PortalDeNoticias;
+
+import java.util.ArrayList;
+
+public class PortalDeNoticias {
+	
+	private ArrayList<Contenido> raiz;
+
+	public PortalDeNoticias() {
+		this.raiz = new ArrayList<>();
+	}
+	
+	
+
+}

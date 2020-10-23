@@ -1,0 +1,31 @@
+package tp8.SistemaDeArchivos;
+
+import java.time.LocalDate;
+
+public class Zip extends Carpeta{
+	
+	public static double factorCompresion = 0.4;
+	
+	public Zip(String nombre, LocalDate fechaCreacion) {
+		super(nombre, fechaCreacion);
+	}
+	
+	@Override
+	public double getPeso(){
+		return super.getPeso()*Zip.factorCompresion;
+		
+	}
+	
+	public int cantArchivos() {
+		return 1;
+	};
+	
+	
+	@Override
+	public int cantCarpetas() {
+		return 0;
+	}
+
+	
+
+}

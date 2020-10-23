@@ -1,0 +1,12 @@
+package PortalDeNoticias;
+
+public abstract class Contenido {
+	
+	public abstract int cantNoticias();
+	
+	public abstract Contenido copiar();
+	
+	public abstract Contenido copiar(String PalabraClave)
+	
+
+}

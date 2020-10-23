@@ -1,0 +1,42 @@
+package tp8.SistemaDeArchivos;
+
+public class Atajo extends Fichero {
+
+	private static int PESO_ATAJO = 1;
+	
+	private Fichero apuntado;
+	
+	public Atajo(Fichero apuntado) {
+		super(apuntado.getNombre());
+		this.apuntado = apuntado;
+	}
+	
+	public Fichero getApuntado() {
+		return this.apuntado;
+	}
+	
+	@Override
+	public String getNombre() {
+		return "Acceso Directo a " + super.getNombre();
+	}
+
+	@Override
+	public double getPeso() {
+		return PESO_ATAJO;
+	}
+
+	@Override
+	public int cantArchivos() {
+		return 1;
+	}
+	
+	public static void setPesoAtajo(int pesoNuevo) {
+		PESO_ATAJO = pesoNuevo;
+	}
+
+	@Override
+	public int cantCarpetas() {
+		return 0;
+	}
+	
+}

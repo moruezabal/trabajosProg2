@@ -1,0 +1,72 @@
+package tp8.SistemaDeArchivos;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+import tp8.SistemaDeArchivos.busqueda.Busqueda;
+
+public abstract class Fichero {
+	
+	public String nombre;
+	public LocalDate fechaCreacion;
+	
+	
+	public Fichero(String nombre, LocalDate fechaCreacion) {
+		this.nombre = nombre;
+		this.fechaCreacion = fechaCreacion;
+		
+	}
+	 
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
+
+	public LocalDate getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+
+	public abstract double getPeso();
+	
+	public abstract int cantArchivos();
+	
+	public abstract int cantCarpetas();
+	
+	public abstract LocalDate getFechaModificacion();
+	
+	public abstract ArrayList<Fichero> buscar(Busqueda busqueda);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main (String[] args) {
+		
+		Carpeta carpeta1 = new Carpeta("Carpeta1", LocalDate.of(2020,10,10));
+		Archivo cancion = new Archivo("cancion", "mp3", 128,  LocalDate.of(2020,10,9));
+		
+		Carpeta comprimidos = new Carpeta("Comprimidos",  LocalDate.of(2020,10,8));
+		carpeta1.addArchivo(comprimidos);
+		Archivo poema = new Archivo("poema", "txt", 200,  LocalDate.of(2020,10,7));
+		comprimidos.addArchivo(poema);
+		
+		carpeta1.addArchivo(cancion);
+		System.out.println(carpeta1.getPeso());
+		System.out.println(comprimidos.getPeso());
+		System.out.println(carpeta1.cantArchivos());
+		
+	}
+
+}
+
+

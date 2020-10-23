@@ -1,0 +1,181 @@
+
+
+
+	primerPacial20_9_19.java
+	//En la opcion b, yo tomé como que era el promedio entre los dos valores.
+	//Tambien podría haber sido el promedio entre todos los valores entre los dos ingresados.
+	 //En la opcion d, tomé como que había de decir si los números ingresados eran o no multiplos
+	de 4.
+	 //Son las dos opciones que podían tener distintos puntos de vista.
+	
+	 import java.io.BufferedReader;
+	 import java.io.InputStreamReader;
+	
+	 public class primerPacial20_9_19 {
+		
+		public static void main(String[] args){
+			
+			char opcion=' ';
+			
+			int num1=0;
+			
+			int num2=0;
+			
+			opcion=obtenerOpcionValida();
+			
+			System.out.print("Ingrese el primer valor: ");
+			
+			num2=obtenerNaturalValido(0);
+			
+			System.out.print("Ingrese el segundo valor: ");
+			
+			num1=obtenerNaturalValido(num2);
+			
+			resolver(opcion,num1,num2);
+			
+		}
+		
+		
+		public static char obtenerOpcionValida(){
+			
+			char op=' ';
+			
+			boolean validada=false;
+			
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+			
+			while(!validada){
+			
+				System.out.println("Ingrese una de las siguientes opciones para resolver...");
+				28
+				System.out.println("a: mostrar todos los números entre dos valores dados.");
+				29
+				System.out.println("b: mostrar el promedio entre dos valores dados.");
+				30
+				System.out.println("c: mostrar los números pares entre dos valores dados.");
+				31
+				System.out.println("d: mostrar si los valores dados son multiplos de 4.");
+				32
+				try{
+					33
+					op=(char)(entrada.readLine().charAt(0));
+					34
+					if(op=='a'|| op=='b' || op=='c' || op=='d')
+						35
+						validada=true;
+					36
+				}
+				37
+				catch(Exception exc){
+					38
+					System.out.print("Opncion Ingresa invalida");
+					39
+				}
+				40
+			}
+			41
+			return op;
+			42
+		}
+		43
+		44
+		public static int obtenerNaturalValido(int a){
+			45
+			int valor=0;
+			46
+			boolean validada=false;
+			47
+			BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+			48
+			while(!validada){
+				49
+				try{
+					50
+					System.out.print("\nIngrese una valor natural que sea mayor que " +a+ " :");
+					51
+					valor=new Integer(entrada.readLine());
+					52
+					if(valor>a)
+						53
+						validada=true;
+					54
+				}
+				55
+				catch(Exception exc){
+					56
+					System.out.print("Ingreso invalido");
+					57
+				}
+				58
+			}
+			59
+			return valor;
+			60
+		}
+		61
+		Page 1primerPacial20_9_19.java
+		62
+		63
+		64
+		65
+		66
+		67
+		68
+		69
+		70
+		71
+		72
+		73
+		74
+		75
+		76
+		77
+		78
+		79
+		80
+		81
+		82
+		83
+		84
+		85
+		86
+		87
+		88
+		89
+		90 }
+	91
+	92
+	public static void resolver(char op, int v1, int v2){
+		double prom=0;
+		if(op=='a')
+			for(int i=v2;i<=v1;i++)
+				System.out.print(i+ " ");
+		else
+			if(op=='b'){
+				prom=(double)((v1+v2)/2);
+				System.out.print("El promedio entre " +v1+ "
+			}
+			else
+				if(op=='c')
+					for(int i=v2;i<=v1;i++){
+						if(i%2==0)
+							System.out.print(i+ " ");
+					}
+				else{
+					if(v1%4==0)
+						System.out.println("El numero " +v1+
+								else
+									System.out.println("El numero " +v1+
+											if(v2%4==0)
+												System.out.println("El numero " +v2+
+														else
+															System.out.println("El numero " +v2+
+				}
+	}
+	Page 2
+	y " +v2+ " es " +prom);
+																	" es multiplo de 4");
+														" no es multiplo de 4");
+											" es multiplo de 4");
+								" no es multiplo de 4");
+
