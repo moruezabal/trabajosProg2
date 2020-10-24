@@ -8,6 +8,12 @@ public class Nodo extends NodoRaiz{
 		super();
 		this.padre = padre;
 	}
+
+	public Nodo getPadre() {
+		return padre;
+	}
+	
+	
 	
 	
 	
