@@ -101,6 +101,25 @@ public class Seccion extends Contenido {
 		
 		return seleccion;
 	}
+
+
+	@Override
+	public ArrayList<String> mapeo() {
+		
+		ArrayList<String> mapa = new ArrayList<>();
+		
+		mapa.add(this.getNombre());
+		
+		for (Contenido contenido: this.contenido) {
+			ArrayList<String> mapaHijo = contenido.mapeo(); 
+			for (String rutaHijo: mapaHijo) {
+				 mapa.add(this.getNombre()+ "/" + rutaHijo);  
+			}
+			
+		}
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 }

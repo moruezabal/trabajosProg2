@@ -123,6 +123,16 @@ public class Noticia extends Contenido {
 		
 		return salida;
 	}
+
+
+
+	@Override
+	public ArrayList<String> mapeo() {
+		ArrayList<String> mapa= new ArrayList<>();
+		mapa.add(this.link);
+	
+		return mapa;
+	}
 	
 
 }

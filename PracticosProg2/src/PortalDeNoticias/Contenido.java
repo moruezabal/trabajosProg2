@@ -12,5 +12,7 @@ public abstract class Contenido {
 	
 	public abstract ArrayList<Noticia> buscarNoticias(Busqueda busqueda);
 	
+	public abstract ArrayList<String> mapeo();
+	
 
 }
